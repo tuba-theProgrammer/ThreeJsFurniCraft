@@ -94,7 +94,7 @@ function App() {
             modelPath="./assets/armchairYellow.gltf"
             positionY={250}
           >
-            <h1 className="title">Hello Tuba</h1>
+            <h1 className="title">Yellow Chair</h1>
           </HTMLContent>
           <HTMLContent
             bgColor="#571ec1"
@@ -102,7 +102,7 @@ function App() {
             modelPath="./assets/armchairGreen.gltf"
             positionY={0}
           >
-            <h1 className="title">Hello Tuba</h1>
+            <h1 className="title">Green Chair</h1>
           </HTMLContent>
           <HTMLContent
             bgColor="#636567"
@@ -110,7 +110,7 @@ function App() {
             modelPath="./assets/armchairGray.gltf"
             positionY={-250}
           >
-            <h1 className="title">Hello Tuba</h1>
+            <h1 className="title">Gray Chair</h1>
           </HTMLContent>
         </Suspense>
       </Canvas>

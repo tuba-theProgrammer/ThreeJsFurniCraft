@@ -24,9 +24,9 @@ const Lights=()=>{
   </>)
 }
 
-const HTMLContent= ({bgColor,domContent,children,modelPath, positionY})=>{
+const HTMLContent= ({scale,bgColor,domContent,children,modelPath, positionY})=>{
   const ref = useRef()
-  useFrame((state, delta) =>(ref.current.rotation.y -=delta ))
+  useFrame((state, delta) =>(ref.current.rotation.y +=0.01 ))
   const [refItem, inView] = useInView({
     threshold: 0,
   });
@@ -36,7 +36,7 @@ const HTMLContent= ({bgColor,domContent,children,modelPath, positionY})=>{
   return(<>
   <Section factor={1.5} offset={1}>
     <group position={[0,positionY,0]}>
-    <mesh ref={ref} position={[0,-35,0]}>
+    <mesh ref={ref} position={[0,-35,0]} scale={[scale, scale, scale]}>
     <Model modelPath={modelPath}/>
     </mesh>
    <Html portal={domContent} fullscreen>
@@ -90,23 +90,23 @@ function App() {
     <Lights/>
 
  <Suspense fallback={null}>
-  <HTMLContent  bgColor='#f15946'  domContent={domContent} modelPath='./assets/armchairYellow.gltf' positionY={250}>
+  <HTMLContent scale={55}  bgColor='#f15946'  domContent={domContent} modelPath='./assets/dining_table_set/scene.gltf' positionY={260}>
 
-    <h1 className="title">yellow Chair</h1>
+    <h1 className="title">Dining</h1>
 
   </HTMLContent>
 
 
-  <HTMLContent  bgColor='#571ec1' domContent={domContent} modelPath='./assets/armchairGreen.gltf' positionY={0}>
+  <HTMLContent scale={16}  bgColor='#571ec1' domContent={domContent} modelPath='./assets/modern_bedroom/scene.gltf' positionY={0}>
 
-    <h1 className="title">Green Chair</h1>
+    <h1 className="title">Bedroom</h1>
 
   </HTMLContent>
 
   
-  <HTMLContent     bgColor='#636567' domContent={domContent} modelPath='./assets/armchairGray.gltf' positionY={-250}>
+  <HTMLContent  scale={50}   bgColor='#636567' domContent={domContent} modelPath='./assets/curved_sofa_set_-_white (1)/scene.gltf' positionY={-250}>
  
-    <h1 className="title">Gray Chair</h1>
+    <h1 className="title">Sofa Set</h1>
 
   </HTMLContent>
   </Suspense>   
